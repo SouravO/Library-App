@@ -5,26 +5,19 @@ const Bookdata = require('../model/Bookdata');
 
 
 
+// Add Book
 function router(nav){
     adminRouter.get('/',function(req,res){
     res.render('addBook',{
         nav,
-        title: 'Library'
+        title: 'Library',
+        books
+
     })
 })
 
 
 adminRouter.post('/add',function(req,res){
-    // res.send("Hey I am added");
-
-        // get method below 
-    // var item = {
-    // title: req.query.title,
-    // author: req.query.author,
-    // genre: req.query.genre,
-    // image: req.query.image
-    // }
-    
 
 // post method
     var item = {
@@ -51,3 +44,4 @@ return adminRouter;
 }
 
 module.exports = router;
+

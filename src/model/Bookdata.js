@@ -15,6 +15,10 @@ const BookSchema = new Schema({
     image: String
 });
 
+
+
+
+
 // MOdel creation
 
 var Bookdata = mongoose.model('bookdata',BookSchema);

@@ -10,6 +10,8 @@ const nav = [
     {
         link:'/admin',name:'Add Book'},
     {
+        link:'/adminauthor',name:'Add Author'},
+    {
         link:'/signup',name:'SignUp'},
      {
        link:'/login',name:'Login'},
@@ -18,11 +20,12 @@ const nav = [
 
 // seperating files
 const booksRouter = require('./src/routes/bookRoutes')(nav)  //passing nav to bookRoutes.js
-const adminRouter = require('./src/routes/adminRoutes')(nav) //passing nav to adminRoutes.js
+const adminRouter = require('../src/routes/adminRoutes')(nav) //passing nav to adminRoutes.js
 const authorsRouter = require('./src/routes/authorRoutes')(nav)
 const authorRouter = require('./src/routes/authorRoutes')(nav)
 const signupRouter = require('./src/routes/signupRoutes')(nav)
 const loginRouter = require('./src/routes/loginRoutes')(nav)
+const adminauthorRouter = require('./src/routes/adminauthorRoutes')(nav)
 
 app.use(express.urlencoded({extended:true}));
 
@@ -37,6 +40,9 @@ app.use('/author',authorsRouter);
 app.use('/authorsi',authorRouter);
 app.use('/signup',signupRouter);
 app.use('/login',loginRouter);
+app.use('/adminauthor',adminauthorRouter);
+
+
 
 app.get('/',function(req,res){
     // res.sendFile(__dirname+"/src/views/index.html");
