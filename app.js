@@ -2,6 +2,7 @@
 const express = require('express');
 // const booksRouter = express.Router();
 const app = express();
+
 const nav = [
     {
         link:'/books',name:'Books'},
@@ -54,6 +55,12 @@ app.get('/',function(req,res){
     });
 
 });
+
+// app.post('/add', upload.single('image'), function (req, res, next) {
+//     // req.file is the `avatar` file
+//     // req.body will hold the text fields, if there were any
+//     console.log(req.file, req.body)
+//   })
 
 
 
