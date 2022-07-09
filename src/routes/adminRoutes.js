@@ -11,7 +11,7 @@ function router(nav){
     res.render('addBook',{
         nav,
         title: 'Library',
-        books
+        // books
 
     })
 })

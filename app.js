@@ -20,7 +20,7 @@ const nav = [
 
 // seperating files
 const booksRouter = require('./src/routes/bookRoutes')(nav)  //passing nav to bookRoutes.js
-const adminRouter = require('../src/routes/adminRoutes')(nav) //passing nav to adminRoutes.js
+const adminRouter = require('./src/routes/adminRoutes')(nav) //passing nav to adminRoutes.js
 const authorsRouter = require('./src/routes/authorRoutes')(nav)
 const authorRouter = require('./src/routes/authorRoutes')(nav)
 const signupRouter = require('./src/routes/signupRoutes')(nav)
