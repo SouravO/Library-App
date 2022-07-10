@@ -20,7 +20,7 @@ function router(nav){
 })
 
 
-adminRouter.post('/add', upload.single('image'),function(req,res){
+adminRouter.post('/add', upload.single('image'), async function(req,res){
 
 // post method
     var item = {
@@ -30,16 +30,16 @@ adminRouter.post('/add', upload.single('image'),function(req,res){
     image: req.file.filename
     
     }
-    console.log(req.file)
+    // console.log(req.file)
 
     var book = Bookdata(item);
-    book.save();//saving to database
+   await book.save();//saving to database
     res.redirect('/books');
 
 
 
 
-    res.send("Hey I'm added");
+    // res.send("Hey I'm added");
 });
 
 
