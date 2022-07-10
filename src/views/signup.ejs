@@ -202,36 +202,36 @@
             <div class="row">
                 <div class=""></div>
     
-        <form onsubmit="return check()">
+        <form onsubmit="return check()" action="/signup/useradd" method="POST">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
-                <input type="text" class="form-control" style="width: 50vh;"  id="mail" placeholder="Email">
+                <input type="text" class="form-control" style="width: 50vh;"  id="mail" name="email" placeholder="Email">
                  <label for="error" id="errorm"></label>
     
               </div>
               <div class="form-group col-md-6">
                 <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" style="width: 50vh;" id="pd" onkeyup="return chPass();" placeholder="Password" required>
+                <input type="password" class="form-control" name="password" style="width: 50vh;" id="pd" onkeyup="return chPass();" placeholder="Password" required>
                 <input type="checkbox" onclick="shpass()" id=""><label for="">Show Password</label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <label for="" id="strength">Type Password</label>
               </div>
             </div>
-            <div class="form-group col-md-6">
+            <!-- <div class="form-group col-md-6">
               <label for="inputAddress">Address</label>
               <input type="text" class="form-control" style="width: 50vh; " id="inputAddress" placeholder="1234 Main St">
-            </div>
+            </div> -->
             <div class="form-group col-md-6">
               <label for="inputAddress2">Phone Number</label>
               <input type="text" class="form-control" style="width: 50vh;" id="number" placeholder="Contact Number">
             </div>
-            <div class="form-row">
+            <!-- <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputCity">City</label>
                 <input type="text" class="form-control" style="width: 50vh;"  id="inputCity">
-              </div>
-              <div class="form-group col-md-4">
+              </div> -->
+              <!-- <div class="form-group col-md-4">
                 <label for="inputState">State</label>
                 <select id="inputState" style="width: 45vh;"  class="form-control">
                   <option selected>Choose...</option>
@@ -241,16 +241,16 @@
               <div class="form-group col-md-2">
                 <label for="inputZip">Zip</label>
                 <input type="text" style="width: 75px;"  class="form-control" id="inputZip">
-              </div>
+              </div> -->
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="gridCheck">
                 <label class="form-check-label" for="gridCheck">
                   Confirm
                 </label>
               </div>
-            </div>
+            </div> -->
             <button type="submit" class="btn btn-primary">Sign in</button>
           </form>
         </div>

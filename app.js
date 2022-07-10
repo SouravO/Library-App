@@ -4,29 +4,61 @@ const express = require('express');
 const app = express();
 
 const nav = [
-    {
-        link:'/books',name:'Books'},
-    {
-        link:'/author',name:'Authors'},
-    {
-        link:'/admin',name:'Add Book'},
-    {
-        link:'/adminauthor',name:'Add Author'},
+    // {
+    //     link:'/books',name:'Books'},
+    // {
+    //     link:'/author',name:'Authors'},
+    // {
+    //     link:'/admin',name:'Add Book'},
+    // {
+    //     link:'/adminauthor',name:'Add Author'},
     {
         link:'/signup',name:'SignUp'},
      {
        link:'/login',name:'Login'},
         
 ];
+const nav1 = [
+    {
+        link:'/books',name:'Books'},
+    {
+        link:'/authors',name:'Authors'},
+    {
+        link:'/admin',name:'Add Book'},
+    {
+        link:'/adminauth',name:'Add Author'},
+    // {
+    //     link:'/signup',name:'Sign Up'},
+    // {
+    //     link:'/login',name:'Log In'},
+    {
+        link:'/',name:'Log Out'},
+];
+const nav2 = [
+    {
+        link:'/books',name:'Books'},
+    {
+        link:'/authors',name:'Authors'},
+    {
+        link:'/admin',name:'Add Book'},
+    {
+        link:'/adminauth',name:'Add Author'},
+    {
+        link:'/signup',name:'Sign Up'},
+    {
+        link:'/login',name:'Log In'},
+    {
+        link:'/logout',name:'Log Out'},
+];
 
 // seperating files
-const booksRouter = require('./src/routes/bookRoutes')(nav)  //passing nav to bookRoutes.js
-const adminRouter = require('./src/routes/adminRoutes')(nav) //passing nav to adminRoutes.js
-const authorsRouter = require('./src/routes/authorRoutes')(nav)
+const booksRouter = require('./src/routes/bookRoutes')(nav1)  //passing nav to bookRoutes.js
+const adminRouter = require('./src/routes/adminRoutes')(nav1) //passing nav to adminRoutes.js
+const authorsRouter = require('./src/routes/authorRoutes')(nav1)
 const authorRouter = require('./src/routes/authorRoutes')(nav)
 const signupRouter = require('./src/routes/signupRoutes')(nav)
 const loginRouter = require('./src/routes/loginRoutes')(nav)
-const adminauthorRouter = require('./src/routes/adminauthorRoutes')(nav)
+const adminauthorRouter = require('./src/routes/adminauthorRoutes')(nav1)
 
 app.use(express.urlencoded({extended:true}));
 
@@ -38,7 +70,7 @@ app.set('views','./src/views');
 app.use('/books',booksRouter);
 app.use('/admin',adminRouter);
 app.use('/author',authorsRouter);
-app.use('/authorsi',authorRouter);
+// app.use('/authorsi',authorRouter);
 app.use('/signup',signupRouter);
 app.use('/login',loginRouter);
 app.use('/adminauthor',adminauthorRouter);
